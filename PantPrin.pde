@@ -34,7 +34,11 @@ class PantPrin{
     textAlign(CENTER,CENTER);
     imageMode(CENTER);
     image(imgtit,640,360);
+    textSize(45);
     text("Gato Furtivo",640,100);
+    fill(255);
+    text("Gato Furtivo",642,102);
+    textSize(20);
     btnInstructions.display();
     btnconf.display();
     btnplay.display();

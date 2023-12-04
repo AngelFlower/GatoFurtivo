@@ -17,6 +17,10 @@ class PantGame{
   Punto2D imgpis;
   Boton btnpause;
   Enemigo enemy;
+  Dog dog;
+  Dog dog2;
+  Dog dog3;
+  Dog dog4;
   float bal;
   int dir;
   
@@ -31,8 +35,12 @@ class PantGame{
     imgcie=new Punto2D(0,0);
     imgmon=new Punto2D(0,-65);
     imgpis=new Punto2D(0,260);
-    enemy=new Enemigo(cf.estartx,cf.estarty,100,200);
-    btnpause=new Boton(640,685,cf.btnw,cf.btnh,15);
+    // enemy=new Enemigo(cf.estartx,cf.estarty,100,200);
+    dog = new Dog(width, height / 2, random(10, 35));
+    dog2 = new Dog(width, (float) random(0, height), random(10, 40));
+    dog3 = new Dog(width, (float) random(0, height), random(10, 40));
+    dog4 = new Dog(width, (float) random(0, height), random(10, 40));
+    btnpause=new Boton(0,985,cf.btnw,cf.btnh,15);
     bal=-1.0;
     dir=RIGHT;
   }
@@ -52,8 +60,20 @@ class PantGame{
     moverPlanos();
     imageMode(CENTER);
     hi.display();
-    graficaCombatientes();
-    enemy.setPerpos(per.pos);
+    // graficaCombatientes();
+    // enemy.setPerpos(per.pos);
+    dog.display();
+    dog.position(random(0, width), random(100, height));
+    dog.move();
+    dog2.display();
+    dog2.position(random(0, width), random(100, height));
+    dog2.move();
+    dog3.display();
+    dog3.position(random(0, width), random(100, height));
+    dog3.move();
+    dog4.display();
+    dog4.position(random(0, width), random(100, height));
+    dog4.move();
     checkColisiones();
     rlj.controlReloj();
     btnpause.display();
@@ -102,10 +122,14 @@ class PantGame{
     if(imgcie.getX()<=-2560)
       per.reachedBorder();
     if(per.hasMovedX()&& imgcie.getX()>-2560){
-      imgcie.moverP(-1,0);
-      imgmon.moverP(-2,0);
-      imgpis.moverP(-3,0);
-      hi.moverH(-3,0);
+      // imgcie.moverP(-1,0);
+      // imgmon.moverP(-2,0);
+      // imgpis.moverP(-3,0);
+      // hi.moverH(-3,0);
+      imgcie.moverP(-3,0);
+      imgmon.moverP(-6,0);
+      imgpis.moverP(-9,0);
+      hi.moverH(-9,0);
     }
   }
   

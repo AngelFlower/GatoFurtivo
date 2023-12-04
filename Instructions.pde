@@ -16,12 +16,12 @@ class Instructions{
         textAlign(CENTER,CENTER);
         imageMode(CENTER);
         image(imgtit,640,360);
-        textSize(30);
+        textSize(32);
         text(idi.getMensaje(38),640,100);
         // fill white
         fill(255);
         text(idi.getMensaje(38),642,102);
-        textSize(20);
+        textSize(22);
         fill(0);
         text(idi.getMensaje(39),640,200);
         text(idi.getMensaje(40),640,240);
