@@ -37,3 +37,11 @@
 #36txtvoivol=Vol. Voces
 #37voiseeu=sound/voices/spa/s_teveo.mp3
 #38screenInstructions=Ayuda
+#39screenInstructionsText1=1 para recargar tu vida.
+#40screenInstructionsText2=E para patada.
+#41screenInstructionsText3=Q para puñetazo.
+#42screenInstructionsText4=W para ir arriba.
+#43screenInstructionsText5=S para ir abajo.
+#44screenInstructionsText6=A para ir izquierda.
+#45screenInstructionsText7=D para ir derecha.
+#46screenInstructionsText8=El objetivo es aguantar el mayor tiempo posible.

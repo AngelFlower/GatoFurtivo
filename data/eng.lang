@@ -37,3 +37,11 @@
 #36txtvoivol=Voices Vol.
 #37voiseeu=sound/voices/eng/e_seeu.mp3
 #38screenInstructions=Help
+#39screenInstructionsText1=1 to recharge your health.
+#40screenInstructionsText2=E to kick the enemies.
+#41screenInstructionsText3=Q to hit.
+#42screenInstructionsText4=W to go up.
+#43screenInstructionsText5=S to go down.
+#44screenInstructionsText6=A to go left.
+#45screenInstructionsText7=D to go right.
+#46screenInstructionsText8=The objective is during more time possible.

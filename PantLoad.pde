@@ -14,9 +14,9 @@ class PantLoad{
   PantLoad(){
     tmpidle=new Temporizador(18);
     loading=true;
-    red=(int)random(0,255);
-    green=(int)random(0,255);
-    blue=(int)random(0,255);
+    red=(int)random(0,100);
+    green=255;
+    blue=230;
   }
   
   void display(){
