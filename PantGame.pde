@@ -36,9 +36,9 @@ class PantGame{
     imgmon=new Punto2D(0,-65);
     imgpis=new Punto2D(0,260);
     enemy=new Enemigo(cf.estartx,cf.estarty,100,200);
-    dog = new Dog(width, height / 2, random(10, 30));
-    dog2 = new Dog(width, (float) random(0, height), random(10, 20));
-    dog3 = new Dog(width, (float) random(0, height), random(10, 30));
+    dog = new Dog(width, (int) height / 2, (int) random(10, 20));
+    dog2 = new Dog(width, (int) random(0, height), (int) random(10, 30));
+    dog3 = new Dog(width, (int) random(0, height), (int) random(10, 30));
     // dog4 = new Dog(width, (float) random(0, height), random(10, 40));
     btnpause=new Boton(0,985,cf.btnw,cf.btnh,15);
     bal=-1.0;
@@ -63,13 +63,13 @@ class PantGame{
     graficaCombatientes();
     enemy.setPerpos(per.pos);
     dog.display();
-    dog.setPosition(random(0, width), random(160, height));
+    dog.setPosition(random(0, width), random(0, height - 100));
     dog.move();
     dog2.display();
-    dog2.setPosition(random(0, width), random(160, height));
+    dog2.setPosition(random(0, width), random(0, height - 100));
     dog2.move();
     dog3.display();
-    dog3.setPosition(random(0, width), random(160, height));
+    dog3.setPosition(random(0, width), random(0, height - 100));
     dog3.move();
     // dog4.display();
     // dog4.position(random(0, width), random(100, height));
@@ -149,6 +149,40 @@ class PantGame{
   }
   
   void checkColisiones(){
+
+    if(per.clbody.isColision(dog.colisionador)){
+      // per.undoMotion();
+      println("colision con perro");
+       if(per.herir(DMGK)){
+        rlj.detenReloj();
+        salvaTiempo();
+      }
+       per.ht.activate();
+      per.clbody.deactivate();
+    }
+    if(per.clbody.isColision(dog2.colisionador)){
+      // per.undoMotion();  
+      println("colision con perro2");
+       if(per.herir(DMGK)){
+        rlj.detenReloj();
+        salvaTiempo();
+      }
+       per.ht.activate();
+      per.clbody.deactivate();
+
+    }
+    if(per.clbody.isColision(dog3.colisionador)){
+      // per.undoMotion();  
+      println("colision con perro3");
+       if(per.herir(DMGK)){
+        rlj.detenReloj();
+        salvaTiempo();
+      }
+       per.ht.activate();
+      per.clbody.deactivate();
+    }
+
+
     //colisiones del cuerpo del personaje contra otros elementos
     if(per.clbody.isColision(enemy.clbody))
       per.undoMotion();  

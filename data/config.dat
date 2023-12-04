@@ -18,9 +18,9 @@
 #btnw=290
 #btnh=50
 #hcs=40
-#drwc=OFF
-#itime=60
-#htime=120
+#drwc=ON
+#itime=20
+#htime=50
 #logstate=OFF
 #dif=25
 #plynm=YTU
