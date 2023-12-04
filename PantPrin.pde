@@ -12,12 +12,14 @@ class PantPrin{
   Boton btncred;
   Boton btntops;
   Boton btnconf;
+  Boton btnInstructions;
   Temporizador tmpexit;
   
   PantPrin(){
     imgtit=loadImage("sprite/fondos/fododegatomain.jpg");
+    btnInstructions=new Boton(990,350,cf.btnw,cf.btnh,38);
     btnconf=new Boton(990,410,cf.btnw,cf.btnh,10);
-    btnplay=new Boton(990,470,cf.btnw,cf.btnh,11);
+    btnplay=new Boton(990,470,cf.btnw + 12 ,cf.btnh + 12,11);
     btntops=new Boton(990,530,cf.btnw,cf.btnh,12);
     btncred=new Boton(990,590,cf.btnw,cf.btnh,13);
     btnexit=new Boton(990,650,cf.btnw,cf.btnh,14);
@@ -30,9 +32,10 @@ class PantPrin{
     fill(0);
     stroke(0);
     textAlign(CENTER,CENTER);
-    text(idi.getMensaje(2),640,360);
     imageMode(CENTER);
     image(imgtit,640,360);
+    text("Gato Furtivo",640,100);
+    btnInstructions.display();
     btnconf.display();
     btnplay.display();
     btntops.display();
@@ -47,6 +50,9 @@ class PantPrin{
   }
   
   void mouseControl(int x,int y,int b){
+    if(btnInstructions.isClicked(x,y,b)){
+      gc.setPantAct(SCREENINSTRUCTIONS);
+    }
     if(btnconf.isClicked(x,y,b)){ 
       gc.setPantAct(PANTCONF);
     }  

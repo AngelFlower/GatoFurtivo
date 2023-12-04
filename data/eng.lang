@@ -1,5 +1,5 @@
 #00pntgame=Game Screen
-#01pntload=Load Screen
+#01pntload=Gato Studios Presents
 #02pntprin=Main Screen
 #03pntconf=Configuration Screen
 #04btnidi=English
@@ -36,3 +36,4 @@
 #35txtmscvol=Music Vol.
 #36txtvoivol=Voices Vol.
 #37voiseeu=sound/voices/eng/e_seeu.mp3
+#38screenInstructions=Help

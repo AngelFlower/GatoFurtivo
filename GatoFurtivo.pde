@@ -18,6 +18,8 @@ final int PANTCRED=4;
 final int PANTTOPS=5;
 final int PANTPAUS=6;
 final int PANTENDG=7;
+final int SCREENINSTRUCTIONS=8;
+
 final int PANMWALK=0;
 final int PANMDEAD=1;
 final int PANMDEFN=2;
@@ -26,6 +28,7 @@ final int PANMPNCH=4;
 final int PANMKICK=5;
 final int PANMJUMP=6;
 final int PANMFALL=7;
+
 final int COLATCK=0;
 final int COLBODY=1;
 final int COLDEFN=2;
@@ -73,10 +76,12 @@ void setup(){
   icon=loadImage("sprite/misc/icon.png");
   size(1280,720);
   windowMove(100,100);
-  windowTitle("Cuerbeat 'Em Up");
+  windowTitle("Gato Furtivo");
   surface.setIcon(icon);
-  typtitle=createFont("Arial",32);
-  textFont(typtitle);
+  // typtitle=createFont("Arial",32);
+  PFont customFont;
+  customFont = loadFont("fonts/04b30-30.vlw");
+  textFont(customFont, 26);
   cf=new ConfigFiles();
   idi=new Idiomas(cf.lang,cf.ns);
   gc=new GameControl();

@@ -5,6 +5,8 @@
 //Descripción: El módulo GameControl tendrá la función de
  //coordinar la ejecución del juego en función de la pantalla
  //activa.
+
+ //
  
  class GameControl{
    int pantact; //es la pantalla activa
@@ -16,6 +18,7 @@
    PantTopScore panttops;
    PantPause pantpause;
    PantEndGame pantendgame;
+   Instructions instructions;
    boolean musicon;
    
    GameControl(){
@@ -27,6 +30,7 @@
      panttops=new PantTopScore();
      pantpause=new PantPause();
      pantendgame=new PantEndGame();
+     instructions=new Instructions();
      musicon=false;
      pantact=PANTLOAD;
    }
@@ -48,6 +52,8 @@
        case PANTPAUS: pantpause.display();
                       break;
        case PANTENDG: pantendgame.display();
+                      break;
+       case SCREENINSTRUCTIONS: instructions.display();
                       break;
      }
    }
@@ -75,7 +81,9 @@
        case PANTPAUS:  pantpause.mouseControl(x,y,b);
                        break;
        case PANTENDG:  pantendgame.mouseControl(x,y,b);
-                       break;                 
+                       break;    
+       case SCREENINSTRUCTIONS: instructions.mouseControl(x,y,b);
+                      break;             
      }                    
    }
    

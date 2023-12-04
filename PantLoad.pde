@@ -9,14 +9,35 @@ class PantLoad{
   Temporizador tmpidle;
   boolean loading;
   int msg;
+  int red,green,blue;
   
   PantLoad(){
-    tmpidle=new Temporizador(180);
+    tmpidle=new Temporizador(18);
     loading=true;
+    red=(int)random(0,255);
+    green=(int)random(0,255);
+    blue=(int)random(0,255);
   }
   
   void display(){
-    background(128);
+    // change color every frame. Smoothly. No random.
+    if(loading){
+      // randoum increment only 2 colors per frame
+      red+=random(-1,Integer.signum((int)random(-1,1)));
+      green+=random(-1,Integer.signum((int)random(-1,1)));
+      blue+=random(-1,Integer.signum((int)random(-1,1)));
+
+      if(red<10) red=(int)random(0,200);
+      if(green<10) green=(int)random(0,200);
+      if(blue<10) blue=(int)random(0,200);
+
+      // constrain color values
+      red=constrain(red,0,255);
+      green=constrain(green,0,255);
+      blue=constrain(blue,0,255);
+      
+    }
+    background(red,green,blue);
     fill(255);
     stroke(255);
     textAlign(CENTER,CENTER);
