@@ -130,7 +130,7 @@ class SpriteSet{
   }
   
   void display(Punto2D pos,Punto2D sze){
-    image(sprt[spr],pos.getX(),pos.getY(),sze.getX(),sze.getY());
+      image(sprt[spr],pos.getX(),pos.getY(),sze.getX(),sze.getY());
     if(onan)
       controlAnimacion();
   }

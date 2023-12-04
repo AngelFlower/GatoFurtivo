@@ -53,15 +53,15 @@ class Personaje{
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_walk/",
                         "prota_camina",8,".png",7,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_dead/",
-                        "pro_dead",16,".png",6,false,0));
+                        "pro_dead",7,".png",6,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_defense/",
                         "prota_def",3,".png",15,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_hit/",
                         "prota_hit",3,".png",18,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_punch/",
-                        "prota_golpe",9,".png",cf.pp,false,0,5));
+                        "prota_golpe",7,".png",cf.pp,false,0,5));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_kick/",
-                        "prota_patea",15,".png",cf.pk,false,0,8));
+                        "prota_patea",8,".png",cf.pk,false,0,8));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_jump/",
                         "prota_salta",8,".png",7,false,0));
     anistr.addSpriteSet(new SpriteSet("sprite/sprites/animation/prota/pro_fall/",

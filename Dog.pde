@@ -2,33 +2,41 @@
 class Dog {
   PVector position;
   float speed;
+  PImage[] dogSprites;  // Use an array for multiple images
+  int currentFrame = 0; // Keep track of the current frame
 
   Dog(float x, float y, float speed) {
     position = new PVector(x, y);
     this.speed = speed;
-  }
-
-  void display() {
-    // Display the enemy
-    fill(255, 0, 0);
-    ellipse(position.x, position.y, 20, 20);
-  }
-
-  void move() {
-    // Move the enemy horizontally
-    position.x -= speed;
-    
-    // If the enemy goes off the screen, reset its position
-    if (position.x < 0) {
-      position.x = width;
+    dogSprites = new PImage[5]; // Adjust the size based on the number of frames
+    for (int i = 0; i < dogSprites.length; i++) {
+      dogSprites[i] = loadImage("sprite/sprites/animation/dog/dog" + (i + 1) + ".png");
     }
   }
 
-  void position(float x, float y) {
-    if (x < 10) {
+  void display() {
+    // Display the current frame of the dog animation
+    image(dogSprites[currentFrame], position.x, position.y, 100, 100);
+  }
+
+  void move() {
+    // Move the dog horizontally
+    position.x -= speed;
+
+    // If the dog goes off the screen, reset its position
+    if (position.x < -40) {
+      position.x = width;
+    }
+
+    // Update the animation frame
+    currentFrame = (currentFrame + 1) % dogSprites.length;
+  }
+
+  void setPosition(float x, float y) {
+    // Set the position of the dog
+    if (x < 0) {
       position.x = x;
       position.y = y;
     }
   }
 }
-
