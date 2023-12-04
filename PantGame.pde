@@ -21,6 +21,7 @@ class PantGame{
   Dog dog2;
   Dog dog3;
   Dog dog4;
+  Dog dog5;
   float bal;
   int dir;
   
@@ -36,11 +37,12 @@ class PantGame{
     imgmon=new Punto2D(0,-65);
     imgpis=new Punto2D(0,260);
     enemy=new Enemigo(cf.estartx,cf.estarty,100,200);
-    dog = new Dog(width, (int) height / 2, (int) random(10, 20));
-    dog2 = new Dog(width, (int) random(0, height), (int) random(10, 30));
-    dog3 = new Dog(width, (int) random(0, height), (int) random(10, 30));
-    // dog4 = new Dog(width, (float) random(0, height), random(10, 40));
-    btnpause=new Boton(0,985,cf.btnw,cf.btnh,15);
+    dog = new Dog(width, 300, (int) random(10, 30));
+    dog2 = new Dog(width, 400, (int) random(10, 32));
+    dog3 = new Dog(width, 510, (int) random(10, 35));
+    dog4 = new Dog(width, 620, (int) random(10, 38));
+    dog5 = new Dog(width, 720, (int) random(10, 40));
+    btnpause=new Boton(width - 200,30,cf.btnw,cf.btnh,15);
     bal=-1.0;
     dir=RIGHT;
   }
@@ -63,17 +65,21 @@ class PantGame{
     graficaCombatientes();
     enemy.setPerpos(per.pos);
     dog.display();
-    dog.setPosition(random(0, width), random(0, height - 100));
+    dog.setPosition(width, 300);
     dog.move();
     dog2.display();
-    dog2.setPosition(random(0, width), random(0, height - 100));
+    dog2.setPosition(width, 400);
     dog2.move();
     dog3.display();
-    dog3.setPosition(random(0, width), random(0, height - 100));
+    dog3.setPosition(width, 510);
     dog3.move();
-    // dog4.display();
-    // dog4.position(random(0, width), random(100, height));
-    // dog4.move();
+    dog4.display();
+    dog4.setPosition(width, 620);
+    dog4.move();
+    dog5.display();
+    dog5.setPosition(width, 720);
+    dog5.move();
+
     checkColisiones();
     rlj.controlReloj();
     btnpause.display();
@@ -152,7 +158,6 @@ class PantGame{
 
     if(per.clbody.isColision(dog.colisionador)){
       // per.undoMotion();
-      println("colision con perro");
        if(per.herir(DMGK)){
         rlj.detenReloj();
         salvaTiempo();
@@ -162,7 +167,6 @@ class PantGame{
     }
     if(per.clbody.isColision(dog2.colisionador)){
       // per.undoMotion();  
-      println("colision con perro2");
        if(per.herir(DMGK)){
         rlj.detenReloj();
         salvaTiempo();
@@ -173,12 +177,29 @@ class PantGame{
     }
     if(per.clbody.isColision(dog3.colisionador)){
       // per.undoMotion();  
-      println("colision con perro3");
        if(per.herir(DMGK)){
         rlj.detenReloj();
         salvaTiempo();
       }
        per.ht.activate();
+      per.clbody.deactivate();
+    }
+    if(per.clbody.isColision(dog4.colisionador)){
+      // per.undoMotion();  
+       if(per.herir(DMGK)){
+        rlj.detenReloj();
+        salvaTiempo();
+      }
+       per.ht.activate();
+      per.clbody.deactivate();
+    }
+    if(per.clbody.isColision(dog5.colisionador)){
+      // per.undoMotion();  
+       if(per.herir(DMGK)){
+        rlj.detenReloj();
+        salvaTiempo();
+      }
+      per.ht.activate();
       per.clbody.deactivate();
     }
 

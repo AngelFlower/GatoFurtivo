@@ -31,7 +31,8 @@ class Dog {
     // postion2d.setX(position.x);
     colisionador.pos.setX((int) position.x);    
     // If the dog goes off the screen, reset its position
-    if (position.x < -40) {
+    if (position.x < -60) {
+      position.y = random(300, height);
       position.x = width;
       colisionador.pos.setX((int) position.x);
     }
@@ -45,11 +46,12 @@ class Dog {
 
   void setPosition(float x, float y) {
     // Set the position of the dog
-    if (x < 0) {
+    if (x < 1) {
       position.x = x;
-      position.y = y;
+      // position.y = random(0, height);
       colisionador.pos.setX((int) position.x);
       colisionador.pos.setY((int) position.y);
+      speed = (int) random(15, 35);
     }
   }
 }

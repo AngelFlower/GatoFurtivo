@@ -144,7 +144,7 @@ class Personaje{
       switch(k){
         //caminar arriba          
         case 'w':
-        case 'W': if(pos.getY()>250){
+        case 'W': if(pos.getY()>330){
                     moverPer(0,-cf.spdy);
                     startLoop(sfxstep);
                     undo.setPunto(new Punto2D(0,cf.spdy));
